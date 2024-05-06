@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: "Poppins", sans-serif !important;
+  
+}
+p{
+  margin-bottom: 0 !important;
+}
+
+/* loading */
+
+.loader {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    width: 80px;
+    height: 80px;
+    padding-left: 0;
+  }       
+  .loader:after {
+    content: ' ';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #6723fa;
+    border-color: #a913ba transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+ 
+/* silder carousel */
+
+@media screen and (min-width: 756px){
+  .slick-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slick-track{
+   margin-left: -10px;
+}
+
+.slick-list{
+    width: 90%; 
+   
+}
+.slick-slide div{
+    margin: 0 1rem;
+    
+}
+}
+
+
+/* for cart empty logo */
+.ant-empty .ant-empty-image svg {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+.ant-empty .ant-empty-description {
+  color: rgba(0, 0, 0, 0.88);
+  margin-top: 100px;
+  font-weight: 700;
+}
+
+
+
+
+
+
+/* delete product */
+.ant-btn.css-dev-only-do-not-override-1uweeqc.ant-btn-primary.ant-btn-sm{
+  background-color: red !important;
+  color: white
+}
+.ant-popconfirm-title {
+  font-size: larger;
+}
+
+.bg_img_footer{
+  /* background-image: url('./img/banner1.jpg'); */
+  background-image: url('./img/webend.jpg');
+}
