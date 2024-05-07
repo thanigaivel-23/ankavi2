@@ -14,7 +14,10 @@ exports.registerUser = expressAsyncHandler(async (req, res) => {
 
     let BASE_URL = process.env.BACKEND_URL;
     if (process.env.NODE_ENV === 'production') {
-        BASE_URL = `${req.protocol}://${req.get('host')}`
+
+        BASE_URL = 'https://ankavisilks.com'
+
+        // BASE_URL = `${req.protocol}://${req.get('host')}`
     }
 
     if (req.file) {

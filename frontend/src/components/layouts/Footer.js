@@ -14,7 +14,7 @@ const Footer = () => {
                     <Link to={'/shipping-and-refund-policy'} className='tw-text-[#5c5c5c] tw-block tw-text-center tw-py-2'>Shipping and Refund Policy</Link>
                 </div>
 
-                <p className='tw-text-center tw-pt-10 tw-pb-20'>&#169; {currentYear}, Ankavi Skills</p>
+                <p className='tw-text-center tw-pt-10 tw-pb-20'>&#169; {currentYear}, Ankavi Silks</p>
 
             </main>
         </>
