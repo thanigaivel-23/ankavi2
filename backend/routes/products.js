@@ -10,19 +10,45 @@ const {
 } = require("../controllers/productsControllers");
 
 const path = require('path')
-const multer = require('multer')
 
+const AWS = require('aws-sdk');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+
+
+AWS.config.update({
+  accessKeyId: 'YOUR_ACCESS_KEY_ID',
+  secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
+  region: 'YOUR_S3_BUCKET_REGION'
+});
+
+const s3 = new AWS.S3();
+// storing imgs in s3 bucket
 const upload = multer({
-  storage: multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '..', 'uploads/product'))
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.originalname)
+  storage: multerS3({
+    s3: s3,
+    bucket: 'YOUR_S3_BUCKET_NAME',
+    acl: 'public-read', // or 'private' if you want to restrict access
+    key: function (req, file, cb) {
+      cb(null, file.originalname);
+      
     }
   })
+});
 
-})
+// storing imgs in mongodb
+
+// const upload = multer({
+//   storage: multer.diskStorage({
+//     destination: function (req, file, cb) {
+//       cb(null, path.join(__dirname, '..', 'uploads/product'))
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.originalname)
+//     }
+//   })
+
+// })
 
 router.get("/products", getProducts);
 router.get("/product/:id", getSingleProduct);

@@ -74,7 +74,7 @@ const newProduct = expressAsyncHandler(async (req, res) => {
 
   if (process.env.NODE_ENV === 'production') {
     // BASE_URL = `${req.protocol}://${req.get('host')}`
-      BASE_URL = 'https://ankavisilks.com'
+    BASE_URL = 'https://ankavisilks.com'
   }
 
   if (req.files.length > 0) {
